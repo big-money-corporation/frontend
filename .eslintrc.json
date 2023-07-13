@@ -1,0 +1,53 @@
+{
+  "root": true,
+  "extends": [
+    "hardcore",
+    "hardcore/react",
+    "hardcore/react-testing-library",
+    "hardcore/jest",
+    "hardcore/fp",
+    "hardcore/ts"
+  ],
+  "plugins": [
+    "react-refresh"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    // for properly working hmr
+    "react-refresh/only-export-components": ["error",  { "allowConstantExport": true }],
+    // increase comments length to 120
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "comments": 120,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    // too strict rule
+    "react/jsx-no-bind": [
+      2,
+      {
+        "allowArrowFunctions": true
+      }
+    ],
+    // allow arrow functions
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        "allowArrowFunctions": true
+      }
+    ],
+    // rule is outdated and disallows arrow functions
+    "react-perf/jsx-no-new-function-as-prop": "off"
+  }
+}
